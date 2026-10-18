@@ -1,0 +1,34 @@
+name: Publish
+
+# Bump <Version> in WPF.Pwsh/WPF.Pwsh.csproj, then publish a GitHub release.
+# Trusted Publishing policy to declare on nuget.org (no API key needed):
+#   Repository Owner: FrApp42 | Repository: WPF.Pwsh | Workflow File: publish.yml
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - run: dotnet pack WPF.Pwsh.slnx --configuration Release -o artifacts
+
+      - name: NuGet login (OIDC)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
+      - run: dotnet nuget push artifacts/*.nupkg --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate

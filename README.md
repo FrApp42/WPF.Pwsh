@@ -19,3 +19,9 @@ Content = terminal;
 - `Disconnect()` kills the shell, `Dispose()` tears the session down.
 
 Windows only, net8.0-windows / net10.0-windows.
+
+## Publishing
+
+`Publish` (`.github/workflows/publish.yml`) packs and pushes to nuget.org through Trusted Publishing — no API key
+stored. Declare the policy on nuget.org (owner `FrApp42`, repository `WPF.Pwsh`, workflow file `publish.yml`), set the
+repository secret `NUGET_USER` to your nuget.org profile name, bump `<Version>` in the csproj, then publish a release.
