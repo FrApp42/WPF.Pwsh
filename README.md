@@ -24,4 +24,5 @@ Windows only, net8.0-windows / net10.0-windows.
 
 `Publish` (`.github/workflows/publish.yml`) packs and pushes to nuget.org through Trusted Publishing — no API key
 stored. Declare the policy on nuget.org (owner `FrApp42`, repository `WPF.Pwsh`, workflow file `publish.yml`), set the
-repository secret `NUGET_USER` to your nuget.org profile name, bump `<Version>` in the csproj, then publish a release.
+repository secret `NUGET_USER` to your nuget.org profile name, then tag main: `git tag v1.0.1 && git push origin v1.0.1`.
+The tag name (minus the `v`) becomes the package version.

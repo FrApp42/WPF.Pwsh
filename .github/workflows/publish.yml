@@ -1,13 +1,13 @@
 name: Publish
 
-# Bump <Version> in WPF.Pwsh/WPF.Pwsh.csproj, then publish a GitHub release.
+# Tag main with the version to publish: git tag v1.0.1 && git push origin v1.0.1
+# (GitHub ne filtre pas les tags par branche : le job vérifie que le tag est bien sur main.)
 # Trusted Publishing policy to declare on nuget.org (no API key needed):
 #   Repository Owner: FrApp42 | Repository: WPF.Pwsh | Workflow File: publish.yml
 
 on:
-  release:
-    types: [published]
-  workflow_dispatch:
+  push:
+    tags: ['v*']
 
 jobs:
   publish:
@@ -18,12 +18,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check the tag is on main
+        shell: bash
+        run: git branch -r --contains "$GITHUB_SHA" | grep -q 'origin/main$'
 
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
 
-      - run: dotnet pack WPF.Pwsh.slnx --configuration Release -o artifacts
+      - name: Pack
+        shell: bash
+        run: dotnet pack WPF.Pwsh.slnx --configuration Release -o artifacts -p:Version="${GITHUB_REF_NAME#v}"
 
       - name: NuGet login (OIDC)
         uses: NuGet/login@v1
