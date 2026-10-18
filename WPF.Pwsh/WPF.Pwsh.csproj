@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0-windows;net10.0-windows</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>FrApp42.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <AssemblyName>FrApp42.$(MSBuildProjectName)</AssemblyName>
+    <Title>WPF.Pwsh</Title>
+    <Authors>FrApp42</Authors>
+    <Description>WPF control hosting a real PowerShell session through ConPTY</Description>
+    <PackageProjectUrl>https://github.com/FrApp42/WPF.Pwsh</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/FrApp42/WPF.Pwsh.git</RepositoryUrl>
+    <PackageTags>WPF;PowerShell;Terminal;ConPTY</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Copyright>LSA-NSOR</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EasyWindowsTerminalControl" Version="1.0.38" />
+  </ItemGroup>
+
+</Project>

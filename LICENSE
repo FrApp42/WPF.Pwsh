@@ -1,0 +1,55 @@
+SOURCE-AVAILABLE LICENSE – NO SALE & OPEN REDISTRIBUTION (LSA‑NSOR)
+Version 1.0 – 2026
+For the project: TROM (Terminal Remote Operations Manager)
+
+Copyright (c) 2026 FrApp42
+
+1. Purpose
+This license governs the use, modification, and redistribution of the software
+(hereinafter “the Software”), provided with access to its source code.
+
+2. Granted Rights
+Subject to full compliance with the terms of this license, the User is permitted to:
+  a. use the Software for personal or professional purposes;
+  b. view, study, and modify the source code;
+  c. redistribute the Software or a modified version, subject to the conditions in Section 4.
+
+3. Restrictions
+The User is not permitted to:
+  a. sell the Software, in whole or in part, in any form whatsoever;
+  b. offer the Software as part of a paid service in which it constitutes the primary value;
+  c. provide the Software, modified or unmodified, as a hosted or cloud service (“Software as a Service”);
+  d. redistribute the Software or any modified version under a proprietary or restrictive license;
+  e. redistribute the Software without providing the complete corresponding source code;
+  f. remove, alter, or obscure any copyright, authorship, or license notices;
+  g. rebrand, rename, or present the Software as their own product;
+  h. use the Software to develop or distribute a competing product with similar core functionality.
+
+4. Redistribution Conditions
+Any redistribution of the Software, modified or unmodified, must comply with the following:
+  a. the redistribution must include the complete source code;
+  b. the redistribution must be made exclusively under this LSA‑NSOR license;
+  c. any modifications must be clearly documented, including the nature and date of the changes;
+  d. all copyright and license notices must be preserved;
+  e. the name “MN (Terminal Remote Operations Manager)” and any associated branding
+     may not be used to endorse derivative works without explicit written permission from the Author.
+
+5. No Warranty
+The Software is provided “as is”, without any express or implied warranty, including but not
+limited to warranties of merchantability, fitness for a particular purpose, or non‑infringement.
+The User assumes all risks associated with the use of the Software.
+
+6. Limitation of Liability
+In no event shall the Author be liable for any direct or indirect damages arising from the use
+of or inability to use the Software.
+
+7. Termination
+Any breach of the terms of this license results in its automatic termination. Upon termination,
+the User must cease all use of the Software and destroy all copies in their possession.
+
+8. Governing Law
+This license is governed by the laws of France, unless otherwise required by mandatory legal
+provisions.
+
+9. Acceptance
+Use of the Software constitutes full and unconditional acceptance of the terms of this license.
